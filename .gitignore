@@ -1,0 +1,7 @@
+# Virtual Env Files
+bin/
+include/
+lib/
+lib64
+
+spotify-interface/myInit.sh
