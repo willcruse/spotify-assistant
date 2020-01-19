@@ -2,17 +2,17 @@ from __future__ import print_function
 import sys
 import spotipy
 import spotipy.util as util
-
-
-
-# username = "zsfhjrarbgsz8595eqt4l6zxp"
+import os
 
 class SpotifyInterface:
 
-    def __init__(self, username):
-        scope = 'user-read-playback-state streaming'
-        self.token = util.prompt_for_user_token(username, scope)
+    def __init__(self):
         self.scope = 'user-read-playback-state streaming'
+        try:
+            self.username = os.environ['SPOTIFY_USERNAME']
+        except:
+            raise Exception("Could not fetch SPOTIFY_USERNAME environment variable")
+        self.token = util.prompt_for_user_token(self.username, self.scope)
         if self.token:
             self.sp = spotipy.Spotify(auth=self.token)
         else:
