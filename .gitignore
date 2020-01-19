@@ -5,3 +5,9 @@ lib/
 lib64
 
 spotify-interface/myInit.sh
+
+spotify-interface/.cache-zsfhjrarbgsz8595eqt4l6zxp
+
+testing/.cache-zsfhjrarbgsz8595eqt4l6zxp
+
+spotify-interface/__pycache__/
